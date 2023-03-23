@@ -1,0 +1,87 @@
+.App {
+  font-family: sans-serif;
+  display: flex;
+  gap: 10px;
+  height: 100vh;
+}
+
+.form {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 50vw;
+  background-color: rgb(172, 171, 169);
+  padding: 30px;
+}
+
+.output {
+  width: 50vw;
+}
+
+.personal-form,
+.education-form {
+  display: flex;
+  flex-direction: column;
+  height: 20%;
+  gap: 10px;
+  background-color: rgb(31, 131, 212);
+  position: relative;
+  justify-content: space-evenly;
+}
+
+.work-form {
+  display: flex;
+  flex-direction: column;
+  height: 41%;
+  background-color: rgb(158, 158, 67);
+  position: relative;
+  justify-content: space-evenly;
+}
+legend {
+  position: absolute;
+  top: -25px;
+  left: 30%;
+  font-size: larger;
+  font-weight: bold;
+}
+legend::before {
+  content: "👁‍🗨";
+  padding-right: 10px;
+}
+
+.input-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+input {
+  width: 45%;
+  height: 125%;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  padding-left: 7px;
+  font-size: 15px;
+}
+
+label {
+  display: flex;
+  flex-wrap: wrap;
+  font-weight: bold;
+}
+
+label:hover {
+  color: rgb(155, 75, 75);
+}
+input:focus {
+  border: 2px solid goldenrod;
+}
+
+textarea {
+  border-radius: 10px;
+  padding: 7px;
+  font-size: 16px;
+  background-color: rgb(73, 146, 206);
+}

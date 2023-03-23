@@ -6,14 +6,19 @@ class Input extends React.Component {
   }
 
   render() {
-    const { type, placeholder, onChange, id } = this.props;
+    const { type, placeholder, onChange, id, htmlFor, labelText, name } =
+      this.props;
     return (
-      <input
-        type={type}
-        placeholder={placeholder}
-        onChange={onChange}
-        id={id}
-      />
+      <div className="input-div">
+        <label htmlFor={htmlFor}>{labelText}</label>
+        <input
+          type={type}
+          placeholder={placeholder}
+          onChange={onChange}
+          id={id}
+          name={name}
+        />
+      </div>
     );
   }
 }

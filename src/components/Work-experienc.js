@@ -8,18 +8,48 @@ class Work extends React.Component {
 
   render() {
     return (
-      <fieldset>
+      <fieldset className="work-form">
         <legend>Work Experience</legend>
-        <label htmlFor="company-name">Company Name ? </label>
-        <Input type="text" placeholder="Name of company" id="company-name" />
-        <label htmlFor="position">Position in that company ? </label>
-        <Input type="text" placeholder="Position title" id="position" />
-        <label htmlFor="work-time">How long you worked there ? </label>
-        <Input type="text" placeholder="Work experience" id="work-time" />
+
+        <Input
+          type="text"
+          placeholder="Name of company"
+          id="company-name"
+          htmlFor="company-name"
+          labelText="Where have you work before: "
+          onChange={this.props.getValue}
+          name="company"
+        />
+
+        <Input
+          type="text"
+          placeholder="Position title"
+          id="position"
+          htmlFor="position"
+          labelText="On which position you have worked there: "
+          onChange={this.props.getValue}
+          name="position"
+        />
+
+        <Input
+          type="text"
+          placeholder="Work experience"
+          id="work-time"
+          htmlFor="work-time"
+          labelText="How long you worked there: "
+          onChange={this.props.getValue}
+          name="experience"
+        />
         <label htmlFor="info">
           Something about you, that you want we to know :
         </label>
-        <textarea id="info" cols="40" rows="10"></textarea>
+        <textarea
+          id="info"
+          cols="40"
+          rows="10"
+          onChange={this.props.getValue}
+          name="aboutU"
+        ></textarea>
       </fieldset>
     );
   }

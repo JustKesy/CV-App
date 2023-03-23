@@ -1,3 +1,4 @@
+import { getValue } from "@testing-library/user-event/dist/utils";
 import React from "react";
 import Input from "./Input";
 
@@ -8,16 +9,48 @@ class PersonalInfo extends React.Component {
 
   render() {
     return (
-      <fieldset>
+      <fieldset className="personal-form">
         <legend>Personal Informations</legend>
-        <label htmlFor="name">Name: </label>
-        <Input type="text" placeholder="Your Name" id="name" />
-        <label htmlFor="last-name">Last Name: </label>
-        <Input type="text" placeholder="Your Surname" id="last-name" />
-        <label htmlFor="e-mail">E-mail: </label>
-        <Input type="e-mail" placeholder="Your E-mail" id="e-mail" />
-        <label htmlFor="phone">Phone: </label>
-        <Input type="tel" placeholder="Your Phone Number" id="phone" />
+
+        <Input
+          type="text"
+          placeholder="Your Name"
+          id="name"
+          htmlFor="name"
+          labelText="Name :"
+          onChange={this.props.getValue}
+          name="name"
+        />
+
+        <Input
+          type="text"
+          placeholder="Your Surname"
+          id="last-name"
+          htmlFor="last-name"
+          labelText="Last Name: "
+          onChange={this.props.getValue}
+          name="lastName"
+        />
+
+        <Input
+          type="e-mail"
+          placeholder="Your E-mail"
+          id="e-mail"
+          htmlFor="e-mail"
+          labelText="E-mail: "
+          onChange={this.props.getValue}
+          name="eMail"
+        />
+
+        <Input
+          type="tel"
+          placeholder="Your Phone Number"
+          id="phone"
+          htmlFor="phone"
+          labelText="Phone: "
+          onChange={this.props.getValue}
+          name="phone"
+        />
       </fieldset>
     );
   }
