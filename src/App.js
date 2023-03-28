@@ -1,43 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Form from "./components/Form";
 import Output from "./components/Output-view";
 import "./style/App.css";
 
-class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      name: "-----",
-      lastName: "--------",
-      eMail: "------",
-      phone: "-------",
-      school: "-------",
-      city: "--------",
-      date: "--------",
-      company: "-------",
-      position: "-------",
-      experience: "-------",
-      aboutU: "----------",
-    };
-    this.getValue = this.getValue.bind(this);
+function App() {
+  const [property, setProperty] = useState({
+    name: "-----",
+    lastName: "--------",
+    eMail: "------",
+    phone: "-------",
+    school: "-------",
+    city: "--------",
+    date: "--------",
+    company: "-------",
+    position: "-------",
+    experience: "-------",
+    aboutU: "----------",
+  });
+  function getValue(e) {
+    setProperty({ ...property, [e.target.name]: e.target.value });
+    console.log(property);
   }
 
-  getValue(e) {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-    console.log(this.state);
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Form getValue={this.getValue} />
-        <Output state={this.state} />
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <Form getValue={getValue} />
+      <Output state={property} />
+    </div>
+  );
 }
 
 export default App;
